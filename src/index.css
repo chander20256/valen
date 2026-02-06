@@ -1,1 +1,110 @@
 @import "tailwindcss";
+/* 
+/* ===============================
+   Root variables – Valentine theme
+   =============================== */
+:root {
+  --valentine-bg: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  --valentine-text: #7a1431;
+}
+
+/* ===============================
+   Global reset (optimized)
+   =============================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: var(--valentine-bg);
+  color: var(--valentine-text);
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+   Root container
+   =============================== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   Valentine utilities
+   =============================== */
+.valentine-glow {
+  box-shadow: 0 10px 30px rgba(238, 156, 167, 0.45);
+}
+
+/* Button (optional utility) */
+.btn-valentine {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-valentine:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 117, 140, 0.5);
+}
+
+/* ===============================
+   Floating hearts animation
+   =============================== */
+.heart-float {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+
+  font-size: 16px;
+  animation: floatFadeUp 16s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Responsive scaling */
+@media (min-width: 640px) {
+  .heart-float {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heart-float {
+    font-size: 32px;
+  }
+}
+
+/* ===============================
+   Keyframes (GPU-friendly)
+   =============================== */
+@keyframes floatFadeUp {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-48px);
+    opacity: 0;
+  }
+} */

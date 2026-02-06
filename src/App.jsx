@@ -1,11 +1,18 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
+import Week from "./Pages/Week";
+import RoseDay from "./Pages/RoseDay";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1 className='bg-red-500'>Hello</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/week" element={<Week />} />
+        <Route path="/rose-day" element={<RoseDay />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
