@@ -201,7 +201,9 @@ const RoseDayContent = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-
+useEffect(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, []);
   return (
     <div className="relative min-h-screen w-full bg-rose-50">
 
