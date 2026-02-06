@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 
 /* Images */
 const moments = [
-  "WhatsApp Image 2026-02-05 at 3.25.18 PM.jpeg",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (3).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (1).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (2).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (12).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (13).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM.jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (5).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (7).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (9).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (6).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (8).jpeg",
+  "New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (10).jpeg",
   "",
   "",
 ];

@@ -80,33 +80,65 @@ const Hero = () => {
       `}</style>
 
       {/* ================= DECORATIVE IMAGES ================= */}
-      <div className="absolute top-[6vh] right-[4vw] md:top-[10vh] md:right-[6vw]
-        w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-64 lg:h-64
-        bg-white border border-gray-300 shadow-xl rounded-2xl rotate-[6deg]
-        flex items-center justify-center z-10">
-        <span className="text-xs text-gray-400">BIG IMG</span>
-      </div>
+      {/* BIG IMAGE (TOP RIGHT) */}
+<div
+  className="absolute top-[6vh] right-[4vw] md:top-[10vh] md:right-[6vw]
+    w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 lg:w-64 lg:h-64
+    bg-white border border-gray-300 shadow-xl rounded-2xl rotate-[6deg]
+    overflow-hidden
+    flex items-center justify-center z-10"
+>
+  <img
+    src="New folder\WhatsApp Image 2026-02-06 at 10.33.08 PM (2).jpeg"
+    alt="Love memory"
+    className="w-full h-full object-cover"
+  />
+</div>
 
-      <div className="absolute top-[18vh] left-[4vw] md:top-[16vh] md:left-[6vw]
-        w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
-        bg-white border border-gray-300 shadow-lg rounded-xl rotate-[-8deg]
-        flex items-center justify-center z-10">
-        <span className="text-[10px] text-gray-400">IMG</span>
-      </div>
+{/* SMALL IMAGE (TOP LEFT) */}
+<div
+  className="absolute top-[18vh] left-[4vw] md:top-[16vh] md:left-[6vw]
+    w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
+    bg-white border border-gray-300 shadow-lg rounded-xl rotate-[-8deg]
+    overflow-hidden
+    flex items-center justify-center z-10"
+>
+  <img
+    src="New folder\WhatsApp Image 2026-02-06 at 10.33.08 PM (3).jpeg"
+    alt="Sweet moment"
+    className="w-full h-full object-cover"
+  />
+</div>
 
-      <div className="absolute bottom-[18vh] left-[6vw] md:left-[8vw]
-        w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
-        bg-white border border-gray-300 shadow-lg rounded-xl rotate-[6deg]
-        flex items-center justify-center z-10">
-        <span className="text-[10px] text-gray-400">IMG</span>
-      </div>
+{/* SMALL IMAGE (BOTTOM LEFT) */}
+<div
+  className="absolute bottom-[18vh] left-[6vw] md:left-[8vw]
+    w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
+    bg-white border border-gray-300 shadow-lg rounded-xl rotate-[6deg]
+    overflow-hidden
+    flex items-center justify-center z-10"
+>
+  <img
+    src="New folder\WhatsApp Image 2026-02-06 at 10.33.08 PM (7).jpeg"
+    alt="Happy memory"
+    className="w-full h-full object-cover"
+  />
+</div>
 
-      <div className="absolute bottom-[20vh] right-[4vw] md:bottom-[16vh] md:right-[6vw]
-        w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
-        bg-white border border-gray-300 shadow-lg rounded-xl rotate-[-6deg]
-        flex items-center justify-center z-10">
-        <span className="text-[10px] text-gray-400">IMG</span>
-      </div>
+{/* SMALL IMAGE (BOTTOM RIGHT) */}
+<div
+  className="absolute bottom-[20vh] right-[4vw] md:bottom-[16vh] md:right-[6vw]
+    w-24 h-24 sm:w-32 sm:h-32 md:w-44 md:h-44
+    bg-white border border-gray-300 shadow-lg rounded-xl rotate-[-6deg]
+    overflow-hidden
+    flex items-center justify-center z-10"
+>
+  <img
+    src="New folder\WhatsApp Image 2026-02-06 at 10.33.08 PM (12).jpeg"
+    alt="Lovely moment"
+    className="w-full h-full object-cover"
+  />
+</div>
 
       {/* ================= FLOATING HEARTS ================= */}
       <div className="absolute inset-0 pointer-events-none z-0">
