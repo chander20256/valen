@@ -45,7 +45,7 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             className="cursor-pointer text-sm sm:text-base font-semibold text-rose-700"
           >
-            Valentine
+            For My Love
           </div>
 
           {/* DESKTOP NAV */}
