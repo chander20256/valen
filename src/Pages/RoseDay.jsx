@@ -18,7 +18,7 @@ import React from "react";
 import Navbar from "../Components/Globalcomp/Navbar";
 import RoseDayContent from "../Components/RoseDayComp/RoseDayContent";
 import WhyYouAreSpecial from "../Components/RoseDayComp/WhyYouAreSpecial";
-import SendVirtualRose from "../Components/RoseDayComp/SendVirtualRose";
+
 
 const RoseDay = () => {
   return (
@@ -32,7 +32,7 @@ const RoseDay = () => {
       <WhyYouAreSpecial />
 
       {/* 🌹 SEND A VIRTUAL ROSE */}
-      {/* <SendVirtualRose /> */}
+ 
     </section>
   );
 };
