@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 const SECRET_PASSWORD = "My_Cute_Little_Baby_Eleplant";
-const STORAGE_KEY = "valentine_access_granted";
 
-const PasswordGate = () => {
+const PasswordGate = ({ onUnlock }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -11,10 +10,8 @@ const PasswordGate = () => {
     e.preventDefault();
 
     if (password === SECRET_PASSWORD) {
-      localStorage.setItem(STORAGE_KEY, "true");
-
-      // 🔁 Force re-render WITHOUT changing URL
-      window.location.reload();
+      sessionStorage.setItem("valentine_unlocked", "true");
+      onUnlock(); // show landing page
     } else {
       setError("That’s not the right password 💔");
     }

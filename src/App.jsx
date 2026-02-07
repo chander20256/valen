@@ -1,54 +1,45 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import LandingPage from "./Pages/LandingPage";
 import Week from "./Pages/Week";
 import RoseDay from "./Pages/RoseDay";
 import ProposeDay from "./Pages/ProposeDay";
 import PasswordGate from "./Pages/PasswordGate";
-import ProtectedRoute from "./Components/Globalcomp/ProtectedRoute";
-
-const STORAGE_KEY = "valentine_access_granted";
 
 function App() {
-  const isUnlocked = localStorage.getItem(STORAGE_KEY) === "true";
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    // ALWAYS reset on reload
+    sessionStorage.removeItem("valentine_unlocked");
+    setUnlocked(false);
+  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* 🔑 ROOT DECIDES WHAT TO SHOW */}
+        {/* 🔑 ROOT — ALWAYS PASSWORD FIRST */}
         <Route
           path="/"
-          element={isUnlocked ? <LandingPage /> : <PasswordGate />}
-        />
-
-        {/* 🔒 PROTECTED ROUTES */}
-        <Route
-          path="/week"
           element={
-            <ProtectedRoute>
-              <Week />
-            </ProtectedRoute>
+            unlocked ? (
+              <LandingPage />
+            ) : (
+              <PasswordGate onUnlock={() => setUnlocked(true)} />
+            )
           }
         />
 
-        <Route
-          path="/rose-day"
-          element={
-            <ProtectedRoute>
-              <RoseDay />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/propose-day"
-          element={
-            <ProtectedRoute>
-              <ProposeDay />
-            </ProtectedRoute>
-          }
-        />
+        {/* 🔒 Other pages ONLY after unlock */}
+        {unlocked && (
+          <>
+            <Route path="/week" element={<Week />} />
+            <Route path="/rose-day" element={<RoseDay />} />
+            <Route path="/propose-day" element={<ProposeDay />} />
+          </>
+        )}
 
       </Routes>
     </BrowserRouter>
