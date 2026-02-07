@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import LandingPage from "./Pages/LandingPage";
 import Week from "./Pages/Week";
@@ -12,12 +12,15 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* 🔐 PASSWORD PAGE */}
+        {/* 🔐 ENTRY POINT */}
         <Route path="/unlock" element={<PasswordGate />} />
 
-        {/* 🔒 PROTECTED ROUTES */}
+        {/* 🚫 ROOT ALWAYS GOES TO UNLOCK */}
+        <Route path="/" element={<Navigate to="/unlock" replace />} />
+
+        {/* 🏠 PROTECTED HOME */}
         <Route
-          path="/"
+          path="/home"
           element={
             <ProtectedRoute>
               <LandingPage />
@@ -25,6 +28,7 @@ function App() {
           }
         />
 
+        {/* 🔒 OTHER PROTECTED ROUTES */}
         <Route
           path="/week"
           element={
@@ -51,6 +55,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* ❌ ANY UNKNOWN URL */}
+        <Route path="*" element={<Navigate to="/unlock" replace />} />
 
       </Routes>
     </BrowserRouter>
