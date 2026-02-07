@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock } from "lucide-react";
@@ -17,6 +15,7 @@ const days = [
     id: 2,
     name: "Propose Day",
     emoji: "💍",
+    path: "/propose-day", // ✅ ONLY ADDITION
     line: "Will You Hold My Heart? 💍",
   },
   {
@@ -155,12 +154,10 @@ const WeekDays = () => {
                 active:scale-[0.95]
               `}
             >
-              {/* Glow (only unlocked) */}
               {isUnlocked && (
                 <div className="absolute inset-0 rounded-full glow opacity-0 group-hover:opacity-100 transition duration-300" />
               )}
 
-              {/* CONTENT */}
               <div
                 className={`relative flex flex-col items-center text-center px-3 ${
                   isUnlocked ? "" : "opacity-40"
@@ -178,13 +175,11 @@ const WeekDays = () => {
                   {day.name}
                 </p>
 
-                {/* 💖 Romantic Line */}
                 <p className="mt-2 text-[11px] sm:text-[12px] text-rose-500 italic">
                   {day.line}
                 </p>
               </div>
 
-              {/* 🔒 LOCK + TIMER */}
               {!isUnlocked && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 backdrop-blur-md rounded-full text-rose-600">
                   <Lock size={22} />
@@ -197,7 +192,6 @@ const WeekDays = () => {
                 </div>
               )}
 
-              {/* Ripple (unlocked) */}
               {isUnlocked && (
                 <span className="ripple absolute inset-0 rounded-full pointer-events-none" />
               )}
@@ -242,6 +236,5 @@ const WeekDays = () => {
     </div>
   );
 };
-
 
 export default WeekDays;

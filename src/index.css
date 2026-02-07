@@ -108,3 +108,37 @@ body {
     opacity: 0;
   }
 } */
+
+/* Smooth emotional emoji animation */
+.emoji-soft {
+  animation: emojiFade 1.2s ease-in-out forwards;
+}
+
+@keyframes emojiFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* html2canvas SAFE MODE (NO OKLCH) */
+.capture-safe,
+.capture-safe * {
+  background: #ffffff !important;
+  color: #881337 !important; /* rose-800 */
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
