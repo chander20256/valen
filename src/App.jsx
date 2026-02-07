@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import LandingPage from "./Pages/LandingPage";
@@ -7,11 +7,19 @@ import RoseDay from "./Pages/RoseDay";
 import ProposeDay from "./Pages/ProposeDay";
 import PasswordGate from "./Pages/PasswordGate";
 
+/* 🔒 Route Guard */
+const RequireUnlock = ({ unlocked, onUnlock, children }) => {
+  if (!unlocked) {
+    return <PasswordGate onUnlock={onUnlock} />;
+  }
+  return children;
+};
+
 function App() {
   const [unlocked, setUnlocked] = useState(false);
 
+  // 🔁 ALWAYS reset on reload
   useEffect(() => {
-    // ALWAYS reset on reload
     sessionStorage.removeItem("valentine_unlocked");
     setUnlocked(false);
   }, []);
@@ -20,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* 🔑 ROOT — ALWAYS PASSWORD FIRST */}
+        {/* 🔑 ROOT — PASSWORD FIRST */}
         <Route
           path="/"
           element={
@@ -32,14 +40,36 @@ function App() {
           }
         />
 
-        {/* 🔒 Other pages ONLY after unlock */}
-        {unlocked && (
-          <>
-            <Route path="/week" element={<Week />} />
-            <Route path="/rose-day" element={<RoseDay />} />
-            <Route path="/propose-day" element={<ProposeDay />} />
-          </>
-        )}
+        {/* 🔒 PROTECTED ROUTES (ALWAYS DEFINED) */}
+        <Route
+          path="/week"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <Week />
+            </RequireUnlock>
+          }
+        />
+
+        <Route
+          path="/rose-day"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <RoseDay />
+            </RequireUnlock>
+          }
+        />
+
+        <Route
+          path="/propose-day"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <ProposeDay />
+            </RequireUnlock>
+          }
+        />
+
+        {/* 🚫 OPTIONAL FALLBACK */}
+        <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
     </BrowserRouter>

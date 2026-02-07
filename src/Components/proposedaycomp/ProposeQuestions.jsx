@@ -277,39 +277,59 @@ const ProposeQuestions = () => {
         </div>
       )}
 
+
       {/* ================= RESULT ================= */}
-      {step === "result" && (
-        <div className="text-center">
-          <div
-            ref={captureRef}
-            className="capture-safe rounded-[36px] p-12 max-w-3xl mx-auto text-left"
-          >
-            <h1 className="text-5xl font-bold text-center mb-12">
-              {proposalAnswer}
-            </h1>
+{step === "result" && (
+  <div className="text-center">
+    <div
+      ref={captureRef}
+      className="capture-safe relative rounded-[36px] overflow-hidden max-w-4xl mx-auto"
+      style={{
+        backgroundImage: "url('/WhatsApp Image 2026-02-05 at 3.25.18 PM.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* 🌸 Soft overlay for readability */}
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
 
-            {questions.map((q, i) => (
-              <div key={i} className="mb-6">
-                <p className="font-medium">
-                  {q.icon} {q.q}
-                </p>
-                <p className="italic mt-1">{answers[i]}</p>
-              </div>
-            ))}
+      {/* 💌 CONTENT */}
+      <div className="relative z-10 p-14 text-left">
+        <h1 className="text-5xl font-bold text-center mb-14 text-rose-700">
+          {proposalAnswer}
+        </h1>
 
-            <p className="text-center text-xs mt-10">
-              {new Date().toLocaleDateString()}
-            </p>
-          </div>
-
-          <button
-            onClick={saveAsImage}
-            className="mt-12 px-14 py-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xl hover:scale-105 transition"
-          >
-            Save This Moment 💖
-          </button>
+        <div className="space-y-6">
+          {questions.map((q, i) => (
+            <div
+              key={i}
+              className="bg-white/70 rounded-2xl p-4 shadow-sm"
+            >
+              <p className="font-medium text-rose-700">
+                {q.icon} {q.q}
+              </p>
+              <p className="italic mt-1 text-rose-600">
+                {answers[i]}
+              </p>
+            </div>
+          ))}
         </div>
-      )}
+
+        <p className="text-center text-xs text-rose-500 mt-12">
+          {new Date().toLocaleDateString()}
+        </p>
+      </div>
+    </div>
+
+    <button
+      onClick={saveAsImage}
+      className="mt-14 px-14 py-4 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-xl hover:scale-105 transition"
+    >
+      Save This Moment 💖
+    </button>
+  </div>
+)}
+
     </section>
   );
 };
