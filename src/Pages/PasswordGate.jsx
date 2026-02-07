@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const SECRET_PASSWORD = "My_Cute_Little_Baby_Eleplant";
+const STORAGE_KEY = "valentine_access_granted";
 
 const PasswordGate = () => {
   const [password, setPassword] = useState("");
@@ -10,10 +11,10 @@ const PasswordGate = () => {
     e.preventDefault();
 
     if (password === SECRET_PASSWORD) {
-      localStorage.setItem("valentine_access_granted", "true");
+      localStorage.setItem(STORAGE_KEY, "true");
 
-      // Force reload so ProtectedRoute re-checks
-      window.location.replace("/");
+      // 🔁 Force re-render WITHOUT changing URL
+      window.location.reload();
     } else {
       setError("That’s not the right password 💔");
     }
@@ -36,23 +37,14 @@ const PasswordGate = () => {
             placeholder="Enter the password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="
-              w-full px-5 py-3 rounded-full
-              border border-rose-300
-              focus:outline-none focus:ring-2 focus:ring-rose-400
-            "
+            className="w-full px-5 py-3 rounded-full border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
           />
 
           {error && <p className="text-sm text-rose-600">{error}</p>}
 
           <button
             type="submit"
-            className="
-              w-full py-3 rounded-full
-              bg-gradient-to-r from-rose-500 to-pink-500
-              text-white font-medium
-              shadow-lg hover:scale-105 transition
-            "
+            className="w-full py-3 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium shadow-lg hover:scale-105 transition"
           >
             Enter 💖
           </button>

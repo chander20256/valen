@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./Pages/LandingPage";
 import Week from "./Pages/Week";
@@ -7,28 +7,22 @@ import ProposeDay from "./Pages/ProposeDay";
 import PasswordGate from "./Pages/PasswordGate";
 import ProtectedRoute from "./Components/Globalcomp/ProtectedRoute";
 
+const STORAGE_KEY = "valentine_access_granted";
+
 function App() {
+  const isUnlocked = localStorage.getItem(STORAGE_KEY) === "true";
+
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* 🔐 ENTRY POINT */}
-        <Route path="/unlock" element={<PasswordGate />} />
-
-        {/* 🚫 ROOT ALWAYS GOES TO UNLOCK */}
-        <Route path="/" element={<Navigate to="/unlock" replace />} />
-
-        {/* 🏠 PROTECTED HOME */}
+        {/* 🔑 ROOT DECIDES WHAT TO SHOW */}
         <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <LandingPage />
-            </ProtectedRoute>
-          }
+          path="/"
+          element={isUnlocked ? <LandingPage /> : <PasswordGate />}
         />
 
-        {/* 🔒 OTHER PROTECTED ROUTES */}
+        {/* 🔒 PROTECTED ROUTES */}
         <Route
           path="/week"
           element={
@@ -55,9 +49,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* ❌ ANY UNKNOWN URL */}
-        <Route path="*" element={<Navigate to="/unlock" replace />} />
 
       </Routes>
     </BrowserRouter>

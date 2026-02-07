@@ -1,10 +1,11 @@
-import React from "react";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ children }) => {
-  const isAllowed = localStorage.getItem("valentine_access_granted");
+const STORAGE_KEY = "valentine_access_granted";
 
-  if (!isAllowed) {
+const ProtectedRoute = ({ children }) => {
+  const allowed = localStorage.getItem(STORAGE_KEY) === "true";
+
+  if (!allowed) {
     return <Navigate to="/unlock" replace />;
   }
 
