@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SECRET_PASSWORD = "My_Cute_Little_Baby_Eleplant";
+const SECRET_PASSWORD = "1";
 
 const PasswordGate = ({ onUnlock }) => {
   const [password, setPassword] = useState("");

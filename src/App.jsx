@@ -5,6 +5,7 @@ import LandingPage from "./Pages/LandingPage";
 import Week from "./Pages/Week";
 import RoseDay from "./Pages/RoseDay";
 import ProposeDay from "./Pages/ProposeDay";
+import ChocolateDay from "./Pages/ChocolateDay";
 import PasswordGate from "./Pages/PasswordGate";
 
 /* 🔒 Route Guard */
@@ -18,7 +19,6 @@ const RequireUnlock = ({ unlocked, onUnlock, children }) => {
 function App() {
   const [unlocked, setUnlocked] = useState(false);
 
-  // 🔁 ALWAYS reset on reload
   useEffect(() => {
     sessionStorage.removeItem("valentine_unlocked");
     setUnlocked(false);
@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* 🔑 ROOT — PASSWORD FIRST */}
+        {/* 🔑 ROOT */}
         <Route
           path="/"
           element={
@@ -40,7 +40,7 @@ function App() {
           }
         />
 
-        {/* 🔒 PROTECTED ROUTES (ALWAYS DEFINED) */}
+        {/* 🔒 PROTECTED ROUTES */}
         <Route
           path="/week"
           element={
@@ -68,7 +68,16 @@ function App() {
           }
         />
 
-        {/* 🚫 OPTIONAL FALLBACK */}
+        <Route
+          path="/chocolate-day"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <ChocolateDay />
+            </RequireUnlock>
+          }
+        />
+
+        {/* 🚫 FALLBACK */}
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
