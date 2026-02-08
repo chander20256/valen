@@ -82,7 +82,7 @@ const ChocolateHero = () => {
       {/* 🍫 BACKGROUND IMAGE */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img
-          src="/chocolate-bg.png"
+          src="New folder/WhatsApp Image 2026-02-06 at 10.33.08 PM (7).jpeg"
           alt="Chocolate"
           className="
             max-w-[80%] max-h-[80%]
