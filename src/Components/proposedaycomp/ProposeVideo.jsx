@@ -95,7 +95,7 @@ const ProposeVideoMoment = () => {
                   ref={videoRef}
                   src="/video/AllVideo.mp4"
                   autoPlay
-                  muted
+                  unmuted
                   controls
                   playsInline
                   onEnded={() => setVideoEnded(true)}

@@ -104,7 +104,7 @@ const ChocolateVideoMoment = () => {
                     <video
                       ref={(el) => (videoRefs.current[i] = el)}
                       src={vid.src}
-                      muted={!isSelected}
+                      unmuted={!isSelected}
                       playsInline
                       controls={isSelected}
                       onEnded={handleEnded}
