@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Navbar from "../Components/Globalcomp/Navbar";
-import ChocolateHero from "../Components/chocolatecomp/ChocolateHero";
 import ChocolateTreats from "../Components/chocolatecomp/ChocolateTreats";
-
+import ChocolateVideoMoment from "../Components/chocolatecomp/ChocolateVideoMoment";
+import ChocolateHero from "../Components/chocolatecomp/ChocolateHero";
 
 const ChocolateDay = () => {
   useEffect(() => {
@@ -10,13 +10,16 @@ const ChocolateDay = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#2b1a12] via-[#3b2418] to-[#1a0e09]">
+    <section className="min-h-screen bg-gradient-to-br from-[#2a160d] via-[#3b2418] to-[#1a0e09]">
       <Navbar />
 
-      {/* 🍫 CHOCOLATE DAY HERO SECTION */}
+      {/* 🍫 HERO SECTION */}
       <ChocolateHero />
 
-      {/* 🍬 SWEET SECTION (LIKE QUESTIONS) */}
+      {/* 🎥 VIDEO MOMENT (FIXED SIZE + AUTO SCROLL) */}
+      <ChocolateVideoMoment />
+
+      {/* 🍬 SWEET SECTION */}
       <ChocolateTreats />
     </section>
   );

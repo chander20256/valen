@@ -22,6 +22,7 @@ const days = [
     id: 3,
     name: "Chocolate Day",
     emoji: "🍫",
+    path: "/chocolate-day",
     line: "Sweet Moments, Just Us 🍫",
   },
   {
