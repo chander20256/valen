@@ -93,7 +93,7 @@ const ProposeVideoMoment = () => {
               <div className="relative aspect-video max-h-[70vh] rounded-[28px] overflow-hidden shadow-2xl bg-white/70 backdrop-blur-xl">
                 <video
                   ref={videoRef}
-                  src="public/video/AllVideo.mp4"
+                  src="/video/AllVideo.mp4"
                   autoPlay
                   muted
                   controls
