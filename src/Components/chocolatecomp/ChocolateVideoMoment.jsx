@@ -9,14 +9,14 @@ const videos = [
     label: "Sweet 🤎",
     title: "The First Time",
     desc: "When everything felt new, shy smiles, nervous hearts, and the sweetness of a first meeting.",
-    src: "VIDEO_LINK_1_HERE",
+    src: "/video/FirstLovevideo.mp4",
   },
   {
     id: "warm",
     label: "Warm ☕",
     title: "The Second Time",
     desc: "When comfort replaced hesitation, laughter flowed easier, and warmth began to grow.",
-    src: "VIDEO_LINK_2_HERE",
+    src: "/video/Secondlovevideo.mp4",
   },
   {
     id: "special",
