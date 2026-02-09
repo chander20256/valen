@@ -6,6 +6,7 @@ import Week from "./Pages/Week";
 import RoseDay from "./Pages/RoseDay";
 import ProposeDay from "./Pages/ProposeDay";
 import ChocolateDay from "./Pages/ChocolateDay";
+import TeddyDay from "./Pages/TeddyDay"; // 🧸 NEW
 import PasswordGate from "./Pages/PasswordGate";
 
 /* 🔒 Route Guard */
@@ -73,6 +74,16 @@ function App() {
           element={
             <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
               <ChocolateDay />
+            </RequireUnlock>
+          }
+        />
+
+        {/* 🧸 TEDDY DAY – FEB 10 */}
+        <Route
+          path="/teddy-day"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <TeddyDay />
             </RequireUnlock>
           }
         />

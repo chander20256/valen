@@ -29,6 +29,7 @@ const days = [
     id: 4,
     name: "Teddy Day",
     emoji: "🧸",
+    path: "/teddy-day",
     line: "Wrapped in My Warmth 🧸",
   },
   {
