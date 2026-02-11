@@ -5,8 +5,9 @@ import LandingPage from "./Pages/LandingPage";
 import Week from "./Pages/Week";
 import RoseDay from "./Pages/RoseDay";
 import ProposeDay from "./Pages/ProposeDay";
+import Promiseday from "./Pages/Promiseday"; // 🤍 NEW
 import ChocolateDay from "./Pages/ChocolateDay";
-import TeddyDay from "./Pages/TeddyDay"; // 🧸 NEW
+import TeddyDay from "./Pages/TeddyDay"; // 🧸
 import PasswordGate from "./Pages/PasswordGate";
 
 /* 🔒 Route Guard */
@@ -65,6 +66,16 @@ function App() {
           element={
             <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
               <ProposeDay />
+            </RequireUnlock>
+          }
+        />
+
+        {/* 🤍 PROMISE DAY */}
+        <Route
+          path="/promise-day"
+          element={
+            <RequireUnlock unlocked={unlocked} onUnlock={() => setUnlocked(true)}>
+              <Promiseday />
             </RequireUnlock>
           }
         />

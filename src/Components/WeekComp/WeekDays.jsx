@@ -36,6 +36,7 @@ const days = [
     id: 5,
     name: "Promise Day",
     emoji: "🤞",
+    path: "/promise-day",
     line: "My Forever Starts Here 🤞",
   },
   {
