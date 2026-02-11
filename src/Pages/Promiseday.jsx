@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import Navbar from "../Components/Globalcomp/Navbar";
-import PromiseHero from "../Components/promisedaycomp/PromiseHero";
+
 import PromiseVows from "../Components/Promisedaycomp/PromiseVows";
 import PromiseReality from "../Components/Promisedaycomp/PromiseReality";
+import PromiseHero from "../Components/Promisedaycomp/PromiseHero";
 
 const Promiseday = () => {
   useEffect(() => {
