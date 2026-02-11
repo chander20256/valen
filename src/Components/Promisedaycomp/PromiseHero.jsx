@@ -73,14 +73,14 @@ const PromiseHero = () => {
       {/* 🤍 BACKGROUND SYMBOLS */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
         <img
-          src="public\New folder\WhatsApp Image 2026-02-11 at 4.30.15 PM (1).jpeg"
+          src="/New folder/WhatsApp Image 2026-02-11 at 4.30.15 PM (1).jpeg"
           alt="Promise Left"
           className="absolute left-[6%] top-1/2 -translate-y-1/2
                      w-[260px] lg:w-[320px]
                      opacity-80 rotate-[-6deg]"
         />
         <img
-          src="public\New folder\WhatsApp Image 2026-02-11 at 4.30.15 PM.jpeg"
+          src="/New folder/WhatsApp Image 2026-02-11 at 4.30.15 PM.jpeg"
           alt="Promise Right"
           className="absolute right-[6%] top-1/2 -translate-y-1/2
                      w-[260px] lg:w-[320px]
