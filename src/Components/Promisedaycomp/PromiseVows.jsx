@@ -7,7 +7,7 @@ const PromiseVows = () => {
 
       {/* 1️⃣ TOP LEFT */}
       <img
-        src="public\New folder\WhatsApp Image 2026-02-11 at 4.25.32 PM.jpeg"
+        src="/New folder/WhatsApp Image 2026-02-11 at 4.25.32 PM.jpeg"
         alt="img"
         className="
           absolute
@@ -22,7 +22,7 @@ const PromiseVows = () => {
 
       {/* 2️⃣ CENTER RIGHT */}
       <img
-        src="public\New folder\WhatsApp Image 2026-02-11 at 4.26.25 PM.jpeg"
+        src="/New folder/WhatsApp Image 2026-02-11 at 4.26.25 PM.jpeg"
         alt="img"
         className="
           absolute
@@ -38,7 +38,7 @@ const PromiseVows = () => {
 
       {/* 3️⃣ BOTTOM LEFT */}
       <img
-        src="public\New folder\WhatsApp Image 2026-02-11 at 4.26.26 PM.jpeg"
+        src="/New folder/WhatsApp Image 2026-02-11 at 4.26.26 PM.jpeg"
         alt="img"
         className="
           absolute
