@@ -104,7 +104,7 @@ const PromiseVows = () => {
           <span className="font-semibold text-[#3f1f27]">
             hamari beti
           </span>{" "}
-          ke saath.
+           ke saath.
         </p>
       </div>
     </section>
